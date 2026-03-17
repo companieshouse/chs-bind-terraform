@@ -1,0 +1,5 @@
+---
+required_packages:
+  - bind
+  - mailx
+  - cyrus-sasl-plain
