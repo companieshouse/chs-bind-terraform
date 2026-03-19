@@ -1,0 +1,11 @@
+# Mac files
+.DS_Store
+._*
+.ansible*
+.ruby-lsp*
+.vagrant*
+Vagrantfile
+
+development/*.json
+
+.vscode

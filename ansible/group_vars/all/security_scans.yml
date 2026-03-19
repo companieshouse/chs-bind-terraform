@@ -1,0 +1,3 @@
+---
+security_scans_oscap_target_os: al2023
+security_scans_oscap_profile: standard
