@@ -14,7 +14,7 @@ data "vault_generic_secret" "kms_keys" {
   path = "aws-accounts/${var.aws_account}/kms"
 }
 data "vault_generic_secret" "kms_key_alias" {
-  path = "applications/${var.aws_account}-${var.aws_region}/${var.service}/${var.service_subtype}"
+  path = "applications/${var.aws_account}-${var.aws_region}/${var.service}/kms_key_alias"
 }
 
 data "aws_vpc" "this" {
@@ -66,7 +66,8 @@ data "aws_ami" "chs-bind_ami" {
 }
 
 data "vault_generic_secret" "ami_owner" {
-  path = "/applications/${var.aws_account}-${var.aws_region}/${var.service}/${var.service_subtype}"
+#  path = "/applications/${var.aws_account}-${var.aws_region}/${var.service}/${var.service_subtype}"
+  path = "/applications/${var.aws_account}-${var.aws_region}/${var.service}/ami_owner"
 }
 
 data "vault_generic_secret" "account_ids" {

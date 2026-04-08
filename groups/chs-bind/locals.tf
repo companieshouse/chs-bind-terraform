@@ -30,7 +30,8 @@ locals {
   kms_key_alias = local.kms_key["kms_key_alias"]
 
   sns_email_secret = data.vault_generic_secret.sns_email.data
-  linux_sns_email  = local.sns_email_secret["linux_email"]
+  #linux_sns_email  = local.sns_email_secret["linux_email"]
+  linux_sns_email  = local.sns_email_secret["sns_private_key"]
 
 #  bind_ansible_ssh_secrets    = data.vault_generic_secret.bind_ansible_ssh_keys.data
 #  bind_ansible_ssh_public_key = local.bind_ansible_ssh_secrets["ansible_ssh_public_key"]
