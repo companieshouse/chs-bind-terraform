@@ -1,2 +1,2 @@
-# postfix - heritage dev/test server
-Terraform for provisioning postfix servers
+# chs-bind - heritage dev/test server
+Terraform for provisioning bind servers

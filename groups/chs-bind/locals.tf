@@ -33,8 +33,8 @@ locals {
   #linux_sns_email  = local.sns_email_secret["linux_email"]
   linux_sns_email  = local.sns_email_secret["sns_private_key"]
 
-#  bind_ansible_ssh_secrets    = data.vault_generic_secret.bind_ansible_ssh_keys.data
-#  bind_ansible_ssh_public_key = local.bind_ansible_ssh_secrets["ansible_ssh_public_key"]
+  bind_ansible_ssh_secrets    = data.vault_generic_secret.bind_ansible_ssh_keys.data
+  bind_ansible_ssh_public_key = local.bind_ansible_ssh_secrets["ansible_ssh_public_key"]
 
   ami_owner    = data.vault_generic_secret.ami_owner.data
   ami_owner_id = local.ami_owner["ami_owner"]

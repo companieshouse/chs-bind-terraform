@@ -1,9 +1,14 @@
 # Account details
 
-aws_account = "heritage-development"
+aws_account = "development"
 aws_region  = "eu-west-2"
 environment = "development"
-dns_zone    = "development.heritage.aws.internal"
+dns_zone    = "development.aws.internal"
+
+vpc_id           = "vpc-038dd851d393e2039"
+subnet_primary   = "subnet-0c13a80db1f01cb53"
+subnet_secondary = "subnet-092045ea5ea8cd54c"
+
 
 # Instance details
 
@@ -11,7 +16,7 @@ instance_count = "3"
 instance_type = "t3.medium"
 root_volume_size = 30
 service = "chs"
-service_subtype = "chs-bind"
+service_subtype = "ch-v2-ns"
 application_subnet_pattern = "sub-application-*"
 default_log_retention_in_days = "7"
 monitoring = false

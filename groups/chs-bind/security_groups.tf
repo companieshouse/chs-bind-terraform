@@ -27,19 +27,26 @@ resource "aws_vpc_security_group_ingress_rule" "bind_ssh_shared_services" {
   to_port           = 22
 }
 
-# SMTP connectivity with other servers
-resource "aws_vpc_security_group_ingress_rule" "bind_smtp" {
+# BIND connectivity with other servers
+resource "aws_vpc_security_group_ingress_rule" "bind_dns" {
   for_each = {
     for id, subnet in data.aws_subnet.application :
     id => subnet.cidr_block
   }
 
-  description       = "Allow SMTP over the app subnet(s) ${each.key}"
+  description       = "Allow BIND over the app subnet(s) ${each.key}"
   security_group_id = aws_security_group.bind.id
   cidr_ipv4         = each.value
   ip_protocol       = "tcp"
-  from_port         = 25
-  to_port           = 25
+  from_port         = 53
+  to_port           = 53
+
+ description       = "Allow BIND over the app subnet(s) ${each.key}"
+  security_group_id = aws_security_group.bind.id
+  cidr_ipv4         = each.value
+  ip_protocol       = "udp"
+  from_port         = 53
+  to_port           = 53
 }
 
 # Egress
